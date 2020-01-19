@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
+import LinearGradient from 'react-native-linear-gradient';
  
 export default class ExampleTwo extends Component {
   constructor(props) {
@@ -28,6 +29,11 @@ export default class ExampleTwo extends Component {
             <Rows data={state.tableData} flexArr={[2, 1, 1]} style={styles.row} textStyle={styles.text}/>
           </TableWrapper>
         </Table>
+        <LinearGradient colors={['#ffedff', '#ffe3ff']} style={styles.linearGradient}>
+        <Text style={styles.buttonText}>
+          Sign in with Facebook
+        </Text>
+      </LinearGradient>
       </View>
     )
   }
@@ -39,5 +45,19 @@ const styles = StyleSheet.create({
   wrapper: { flexDirection: 'row' },
   title: { flex: 1, backgroundColor: '#f6f8fa' },
   row: {  height: 28  },
-  text: { textAlign: 'center' }
+  text: { textAlign: 'center' },
+  linearGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5
+  },
+  buttonText: {
+    fontSize: 18,
+    fontFamily: 'Gill Sans',
+    textAlign: 'center',
+    margin: 10,
+    color: 'black',
+    backgroundColor: 'transparent',
+  },
 });
